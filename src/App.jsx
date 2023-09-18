@@ -1,5 +1,5 @@
-import Navigation from "./components/Navigation"
-import Search from "./components/Search"
+import Navigation from "./components/Navigation";
+import Search from "./components/Search";
 
 function App() {
   return (
