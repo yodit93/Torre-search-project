@@ -25,6 +25,10 @@ body{
   list-style: none;
 }
 
+.logo {
+  font-weight: 700;
+}
+
 .search-cont {
   display: flex;
   margin-top: 30%;
