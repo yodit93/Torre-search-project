@@ -1,7 +1,11 @@
+import Navigation from "./components/Navigation"
+import Search from "./components/Search"
+
 function App() {
   return (
     <div>
-      Torre-search-project
+      <Navigation />
+      <Search />
     </div>
   )
 }
