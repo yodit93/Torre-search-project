@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body{
+  font-family: 'Kumbh Sans', sans-serif;
+  background-color: rgb(70, 71, 71);
+  color: white;
+  height: 100vh;
+}
+
+.nav {
+  height: 60px;
+  background-color: rgb(88, 90, 91);
+  padding: 0 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-links {
+  list-style: none;
+}
+
+.serach-cont {
+  display: flex;
+  height: 60vh;
+  justify-content: center;
+  align-items: center;
+}
+
+.serach-cont input {
+  background-color: rgb(70, 71, 71);
+  border: 2px solid rgb(176, 179, 179);
+  width: 80%;
+  height: 3rem;
+  border-radius: 30px;
+  padding-left: 2rem;
+  color: white;
+  font-size: 20px;
+}
+
+.serach-cont input::placeholder {
+  color: rgb(176, 179, 179);
+  font-size: 20px;
+}
+
+.serach-cont input:focus {
+  outline: none;
+  border-color: #e7b63a;
+}
+
+@media screen and (min-width: 900px) {
+  .nav {
+    padding: 0 5rem;
+  }
+
+  .serach-cont input {
+    width: 55%;
+  }
+}
