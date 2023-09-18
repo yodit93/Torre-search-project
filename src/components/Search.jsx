@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { getCandidates } from "../Redux/candidatesSlice";
 import { useEffect, useState } from "react";
 import Candidate from "./Candidate";
+import { Link } from "react-router-dom";
 
 const Search = () => {
      const dispatch = useDispatch();
@@ -37,7 +38,9 @@ const Search = () => {
           <div className="filtered-cont">
                {state.filtered && state.filtered.map((candidate) => {
                return (
-                  <Candidate key={candidate.id} candidate={candidate}/>  
+                  <Link to={`genome/${candidate.id}`} key={candidate.id}>
+                    <Candidate candidate={candidate}/>
+                  </Link>  
                )})}
           </div>
      </>

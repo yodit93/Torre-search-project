@@ -4,7 +4,7 @@ import axios from 'axios';
 const initialState = {
     candidates: [],
 }
-const url = 'http://localhost:3001/candidates';
+const url = 'http://localhost:3000/candidates';
 export const getCandidates = createAsyncThunk('candidates/getCandidates', async (_, { rejectWithValue }) => {
   try {
     const response = await axios(url);
