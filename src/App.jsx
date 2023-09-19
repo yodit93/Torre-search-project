@@ -9,8 +9,8 @@ function App() {
       <div>
         <Navigation />
         <Routes>
-          <Route index element={<Search />}/>
-          <Route path="genome/:id" element={<Genome />}/>
+          <Route path="/torre-search-project/" element={<Search />}/>
+          <Route path="/torre-search-project/genome/:id" element={<Genome />}/>
         </Routes>
       </div>
     </Router>
