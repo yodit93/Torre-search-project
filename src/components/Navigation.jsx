@@ -5,7 +5,7 @@ const Navigation = () => {
         <nav className="nav">
             <span className="logo">SEARCH</span>
             <ul className="nav-links">
-                <NavLink to="/torre-search-project"><li>BY NAME</li></NavLink>
+                <NavLink to="/Torre-search-project"><li>BY NAME</li></NavLink>
             </ul>
         </nav>
     );
