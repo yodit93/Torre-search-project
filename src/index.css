@@ -25,6 +25,15 @@ body{
   list-style: none;
 }
 
+.nav-links li {
+ transition: all ease-in-out 0.5s;
+}
+
+.nav-links li:hover {
+  border-bottom: 2px solid #e7b63a;
+  padding-bottom: 0.5rem;
+}
+
 .logo {
   font-weight: 700;
 }

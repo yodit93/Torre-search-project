@@ -4,6 +4,7 @@ import { useParams } from "react-router-dom";
 const Genome = () => {
     const {id} = useParams();
     const {candidates} = useSelector((state) => state.candidates);
+    const recentSearch = JSON.parse(localStorage.getItem("recentSearch"));
     return ( 
         <div className="candidate-genome">
             {candidates.filter((candidate) => id == candidate.id).map((candidate) => {

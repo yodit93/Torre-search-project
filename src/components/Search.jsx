@@ -1,16 +1,17 @@
 import { useDispatch, useSelector } from "react-redux";
-import { getCandidates } from "../Redux/candidatesSlice";
+import { addRecentSearch, getCandidates } from "../Redux/candidatesSlice";
 import { useEffect, useState } from "react";
 import Candidate from "./Candidate";
 import { Link } from "react-router-dom";
 
 const Search = () => {
      const dispatch = useDispatch();
-     const {candidates} = useSelector((state) => state.candidates);
+     const {candidates, recentSearches} = useSelector((state) => state.candidates);
      const [state, setState] = useState({
           searchValue: '',
           filtered: [],
      });
+    
      useEffect(() => {
        dispatch(getCandidates());
      },[dispatch]);
@@ -24,7 +25,9 @@ const Search = () => {
                filtered: results,
           })
      }
-     console.log(state.filtered);
+     const handleRecentSearch = (id) => {
+          dispatch(addRecentSearch(id));
+     };
     return (
      <>
           <div className="search-cont">
@@ -36,9 +39,16 @@ const Search = () => {
              />
           </div>
           <div className="filtered-cont">
+               {state.searchValue === '' && recentSearches.map((candidate) => {
+                    return (
+                         <Link to={`genome/${candidate.id}`} key={candidate.id} onClick={() => handleRecentSearch(candidate.id)}>
+                              <Candidate candidate={candidate}/>
+                         </Link>
+                    )
+               })}
                {state.filtered && state.filtered.map((candidate) => {
                return (
-                  <Link to={`genome/${candidate.id}`} key={candidate.id}>
+                  <Link to={`genome/${candidate.id}`} key={candidate.id} onClick={() => handleRecentSearch(candidate.id)}>
                     <Candidate candidate={candidate}/>
                   </Link>  
                )})}
