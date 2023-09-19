@@ -5,7 +5,7 @@ const initialState = {
     candidates: [],
     recentSearches: [],
 }
-const url = 'http://localhost:3000/candidates';
+const url = 'https://torre-search-backend-hfm4.onrender.com/candidates';
 export const getCandidates = createAsyncThunk('candidates/getCandidates', async (_, { rejectWithValue }) => {
   try {
     const response = await axios(url);
