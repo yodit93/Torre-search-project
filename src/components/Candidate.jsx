@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 const Candidate = ({candidate}) => {
     return ( 
         <div className="candidate-info">
@@ -6,5 +7,12 @@ const Candidate = ({candidate}) => {
         </div>
      );
 }
- 
+Candidate.propTypes = {
+    candidate: PropTypes.shape({
+        id: PropTypes.string.isRequired,
+        name: PropTypes.string.isRequired,
+        photo: PropTypes.string.isRequired,
+    }).isRequired,
+};
+
 export default Candidate;

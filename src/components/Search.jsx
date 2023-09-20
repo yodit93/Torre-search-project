@@ -14,7 +14,7 @@ const Search = () => {
     
      useEffect(() => {
        dispatch(getCandidates());
-     },[dispatch]);
+     },[]);
      const handleSearch = (e) => {
           const results = candidates.filter((candidate) => {
                if(e.target.value === '') return;

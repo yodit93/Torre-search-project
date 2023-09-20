@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
-body{
+body {
   font-family: 'Kumbh Sans', sans-serif;
   background-color: rgb(70, 71, 71);
   color: white;
@@ -26,7 +27,7 @@ body{
 }
 
 .nav-links li {
- transition: all ease-in-out 0.5s;
+  transition: all ease-in-out 0.5s;
 }
 
 .nav-links li:hover {
@@ -76,7 +77,7 @@ body{
 .candidate-info {
   display: flex;
   gap: 2rem;
-  box-shadow: 0px 0px 0px 3px rgb(249 238 238 / 20%);
+  box-shadow: 0 0 0 3px rgb(249 238 238 / 20%);
   padding: 10px;
   align-items: center;
   transition: all ease-in-out 1s;
@@ -90,7 +91,7 @@ body{
 .candidate-info img {
   width: 40px;
   height: 40px;
-  border-radius: 20px
+  border-radius: 20px;
 }
 
 a {

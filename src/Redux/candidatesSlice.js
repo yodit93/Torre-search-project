@@ -21,12 +21,13 @@ const candidatesSlice = createSlice({
     reducers: {
         addRecentSearch: (state, { payload }) => {
           const result = state.candidates.find((candidate) => candidate.id === payload);
-          if (result) {
+          if (result && !state.recentSearches.includes(result)) { 
             return {
               ...state,
               recentSearches: [result, ...state.recentSearches].slice(0, 10),
             };
           }
+          return state;
         },
     },
     extraReducers: (builder) => {
