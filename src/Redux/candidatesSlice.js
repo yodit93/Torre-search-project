@@ -3,7 +3,7 @@ import axios from 'axios';
 
 const initialState = {
     candidates: [],
-    recentSearches: [],
+    recentSearches: JSON.parse(localStorage.getItem('recentSearches')) ?? [],
 }
 const url = 'https://torre-search-backend-hfm4.onrender.com/candidates';
 export const getCandidates = createAsyncThunk('candidates/getCandidates', async (_, { rejectWithValue }) => {
@@ -26,9 +26,11 @@ const candidatesSlice = createSlice({
             if(!uniqueRecentSearches.has(result.id)) {
               uniqueRecentSearches.add(result.id);
               const updatedRecentSearches = [...uniqueRecentSearches].slice(0, 10);
+              const newSearch = updatedRecentSearches.map((id) => state.candidates.find((candidate) => candidate.id === id));
+              localStorage.setItem('recentSearches', JSON.stringify(newSearch))
               return {
                 ...state,
-                recentSearches: updatedRecentSearches.map((id) => state.candidates.find((candidate) => candidate.id === id)),
+                recentSearches: [...newSearch],
               };
             }
             

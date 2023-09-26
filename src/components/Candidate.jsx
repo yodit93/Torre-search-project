@@ -9,7 +9,6 @@ const Candidate = ({candidate}) => {
 }
 Candidate.propTypes = {
     candidate: PropTypes.shape({
-        id: PropTypes.string.isRequired,
         name: PropTypes.string.isRequired,
         photo: PropTypes.string.isRequired,
     }).isRequired,
