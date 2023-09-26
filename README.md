@@ -1,9 +1,3 @@
-<a name="readme-top"></a>
-
-<div align="center">
-  <h2><b>CarBooker</b></h2>
-</div>
-
 # 📗 Table of Contents
 
 - [📖 Torre-search](#torre-search)
