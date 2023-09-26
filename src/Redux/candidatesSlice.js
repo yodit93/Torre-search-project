@@ -21,14 +21,20 @@ const candidatesSlice = createSlice({
     reducers: {
         addRecentSearch: (state, { payload }) => {
           const result = state.candidates.find((candidate) => candidate.id === payload);
-          if (result && !state.recentSearches.includes(result)) { 
-            return {
-              ...state,
-              recentSearches: [result, ...state.recentSearches].slice(0, 10),
-            };
+          if(result) {
+            const uniqueRecentSearches = new Set(state.recentSearches.map((search) => search.id));
+            if(!uniqueRecentSearches.has(result.id)) {
+              uniqueRecentSearches.add(result.id);
+              const updatedRecentSearches = [...uniqueRecentSearches].slice(0, 10);
+              return {
+                ...state,
+                recentSearches: updatedRecentSearches.map((id) => state.candidates.find((candidate) => candidate.id === id)),
+              };
+            }
+            
           }
           return state;
-        },
+        },       
     },
     extraReducers: (builder) => {
         builder
