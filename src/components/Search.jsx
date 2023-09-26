@@ -39,7 +39,7 @@ const Search = () => {
              />
           </div>
           <div className="filtered-cont">
-               {state.searchValue === '' && recentSearches.map((candidate) => {
+               {state.searchValue === '' && recentSearches.slice().reverse().map((candidate) => {
                     return (
                          <Link to={`genome/${candidate.id}`} key={candidate.id} onClick={() => handleRecentSearch(candidate.id)}>
                               <Candidate candidate={candidate}/>
