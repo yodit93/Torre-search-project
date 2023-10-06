@@ -40,18 +40,23 @@ const Search = () => {
           </div>
           <div className="filtered-cont">
                {state.searchValue === '' && recentSearches.slice().reverse().map((candidate) => {
+                    if(candidate.imageUrl) {
+                         return (
+                              <Link to={`genome/${candidate.ardaId}`} key={candidate.ardaId} onClick={() => handleRecentSearch(candidate.ardaId)}>
+                                   <Candidate candidate={candidate}/>
+                              </Link>
+                         )
+                    }
+               })}
+               {state.filtered && state.filtered.map((candidate) => {
+               if(candidate.imageUrl) {
                     return (
-                         <Link to={`genome/${candidate.id}`} key={candidate.id} onClick={() => handleRecentSearch(candidate.id)}>
+                         <Link to={`genome/${candidate.ardaId}`} key={candidate.ardaId} onClick={() => handleRecentSearch(candidate.ardaId)}>
                               <Candidate candidate={candidate}/>
                          </Link>
                     )
+               }
                })}
-               {state.filtered && state.filtered.map((candidate) => {
-               return (
-                  <Link to={`genome/${candidate.id}`} key={candidate.id} onClick={() => handleRecentSearch(candidate.id)}>
-                    <Candidate candidate={candidate}/>
-                  </Link>  
-               )})}
           </div>
      </>
      );
