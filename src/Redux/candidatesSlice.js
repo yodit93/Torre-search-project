@@ -5,11 +5,13 @@ const initialState = {
     candidates: [],
     recentSearches: JSON.parse(localStorage.getItem('recentSearches')) ?? [],
 }
-const url = 'https://torre-search-backend-hfm4.onrender.com/candidates';
+const url = 'https://torre.ai/api/entities/_search';
+const options = {"query": "Yo", "limit": 10};
 export const getCandidates = createAsyncThunk('candidates/getCandidates', async (_, { rejectWithValue }) => {
   try {
-    const response = await axios(url);
-    return response.data;
+    const response = await axios.post(url, options);
+    console.log(response.data.results)
+    return response.data.results;
   } catch (err) {
     return rejectWithValue('Unable to fetch users');
   }
@@ -20,13 +22,13 @@ const candidatesSlice = createSlice({
     initialState,
     reducers: {
         addRecentSearch: (state, { payload }) => {
-          const result = state.candidates.find((candidate) => candidate.id === payload);
+          const result = state.candidates.find((candidate) => candidate.ardaId === payload);
           if(result) {
-            const uniqueRecentSearches = new Set(state.recentSearches.map((search) => search.id));
-            if(!uniqueRecentSearches.has(result.id)) {
-              uniqueRecentSearches.add(result.id);
+            const uniqueRecentSearches = new Set(state.recentSearches.map((search) => search.ardaId));
+            if(!uniqueRecentSearches.has(result.ardaId)) {
+              uniqueRecentSearches.add(result.ardaId);
               const updatedRecentSearches = [...uniqueRecentSearches].slice(0, 10);
-              const newSearch = updatedRecentSearches.map((id) => state.candidates.find((candidate) => candidate.id === id));
+              const newSearch = updatedRecentSearches.map((id) => state.candidates.find((candidate) => candidate.ardaId === id));
               localStorage.setItem('recentSearches', JSON.stringify(newSearch))
               return {
                 ...state,
