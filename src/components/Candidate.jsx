@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 const Candidate = ({candidate}) => {
     return ( 
         <div className="candidate-info">
-            <img src={candidate.photo} alt="candidate photo" />
+            <img src={candidate.imageUrl} alt="candidate photo" />
             <h3>{candidate.name}</h3>
         </div>
      );
@@ -10,7 +10,7 @@ const Candidate = ({candidate}) => {
 Candidate.propTypes = {
     candidate: PropTypes.shape({
         name: PropTypes.string.isRequired,
-        photo: PropTypes.string.isRequired,
+        imageUrl: PropTypes.string.isRequired,
     }).isRequired,
 };
 
