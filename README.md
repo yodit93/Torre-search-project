@@ -165,7 +165,7 @@ If you like this project... Kindly leave a star ⭐
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
 
-I would like to thank Torre.
+I would like to thank Torre for giving me this chance.
 
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
