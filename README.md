@@ -63,7 +63,7 @@ Torre-search-frontend is a web application that allows users to search for peopl
 - User can search people by name
 - User can see the results of the search
 - User can see the details of a person
-- User can get suggestion from previous search
+- User can get suggestion from previous search.
 
   
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
