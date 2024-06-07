@@ -1,5 +1,4 @@
-# 📗 Table of Contents
-
+# 📗 Table of Content
 - [📖 Torre-search](#torre-search)
   - [🛠 Built With](#built-with)
     - [Tech Stack](#tech-stack)
