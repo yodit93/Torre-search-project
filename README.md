@@ -23,7 +23,7 @@
 
 ## 📖 Torre-search-frontend <a name="about-project"></a>
 
-Torre-search-frontend is a web application that allows users to search for people by name. It is built with React and Redux.
+Torre-search-frontend is a web application that allows users to search for people by name. It is built with React and Redux. I did this project as part of the home take assignment for software engineering intern position at Torre.
 
 ## 🛠 Built With  VSCode  <a name="Built With VSCode"></a>
 
